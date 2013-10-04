@@ -24,6 +24,7 @@ class TableElement extends PolymerElement with ObservableMixin {
     if (filter == null || filter.length == 0) {
       tablesToShow.addAll(top20?tables.take(20):tables);
       ce.columnsToShow.clear();
+      ce.locked = false;
       return;
     }
     RegExp re = new RegExp(filter);
