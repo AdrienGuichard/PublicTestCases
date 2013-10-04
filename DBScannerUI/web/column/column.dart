@@ -14,11 +14,11 @@ class ColumnElement extends PolymerElement with ObservableMixin {
   }
   
 
-  bool locked = false;
+  bool skip = false;
   filterColumns(Completer cmp) {
     String filter = te.filter;
-    if (locked) return;
-    locked = true;
+    if (skip) return;
+    skip = true;
     Iterable<TableEntity> t = te.tablesToShow.where((TableEntity tef) {
       return tef.columnsId != null && tef.columnsId.length > 0;
     }).take(20);
@@ -34,16 +34,17 @@ class ColumnElement extends PolymerElement with ObservableMixin {
         return false;
       }
     }).take(50);
-    locked = false;
+    skip = false;
     return cmp.complete(lc);
   }
   
   _performColumnFilter() {
     if(te.filter.length < 2) {
       columnsToShow.clear();
+      skip = false;
       return;
     }
-    if (locked) return;
+    if (skip) return;
     Completer cmp = new Completer();
     Future<Iterable<ColumnEntity>> f = cmp.future;
     f.then((lc) {
