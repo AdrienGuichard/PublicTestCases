@@ -1,0 +1,6 @@
+name: DBScannerUI
+description: A sample Polymer application
+dependencies:
+  chart: any
+  polymer: any
+  protobuf: any

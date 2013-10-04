@@ -1,0 +1,10 @@
+<polymer-element name="table-loop">
+  <template>
+    <h2>Tables {{ numberOfTables }}</h2>
+    Filter ?<input type="text" value="{{ filter }}"><br>
+    TOP  20 ?<input type="checkbox" checked="{{ top20 }}"><br>
+    <template repeat="{{tb in tablesToShow}}">
+      {{ tb }}<br>
+    </template>
+  </template>
+</polymer-element>

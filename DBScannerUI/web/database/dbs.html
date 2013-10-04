@@ -1,0 +1,18 @@
+<polymer-element name="database-loop">
+  <template>
+    <h2>Databases</h2>
+    <template repeat="{{ db in databases }}">
+      {{ db.url }}
+      <ul>
+        <li>{{ db.databaseProductName }} {{ db.databaseProductVersion }} - {{ db.userName }}</li>
+        <li>{{ db.driverName }}</li>
+        <li>isReadOnly: {{ db.isReadOnly }}</li>
+        <li>maxIndexLength: {{ db.maxIndexLength }}</li>
+        <li>maxStatementLength: {{ db.maxStatementLength }}</li>
+        <li>maxTablesInSelect: {{ db.maxTablesInSelect }}</li>
+        <li>storesLowerCaseIdentifiers: {{ db.storesLowerCaseIdentifiers }}</li>
+        <li>storesUpperCaseIdentifiers: {{ db.storesUpperCaseIdentifiers }}</li>
+      </ul>
+    </template>
+  </template>
+</polymer-element>
