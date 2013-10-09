@@ -1,6 +1,6 @@
 <polymer-element name="column-loop">
   <template>
-    <h2>TOP 50 (in fact {{ columnsToShow.length }}) Columns on filtered tables, on a total of {{ numberOfColumns }}</h2>
+    <h2>{{ columnsToShow.length }} Columns on filtered tables, on a total of {{ numberOfColumns }}</h2>
     <template repeat="{{cl in columnsToShow}}">
         {{ cl }}<br>
     </template>

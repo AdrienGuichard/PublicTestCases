@@ -51,6 +51,7 @@ void loadAllUveGot(HttpRequest r) {
   ce.columns = b.columnEntity;
   te.ce = ce; // Do not want
   ce.te = te;
+  ce.columns.first.isDefinitelyWritable;
   
   // TODO: Do not Want !!
   registerPolymerElement('database-loop', () => dbe);

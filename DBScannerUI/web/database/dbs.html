@@ -1,7 +1,9 @@
 <polymer-element name="database-loop">
   <template>
     <h2>Databases</h2>
+    <input type="checkbox" checked="{{ tutu }}">
     <template repeat="{{ db in databases }}">
+    
       {{ db.url }}
       <ul>
         <li>{{ db.databaseProductName }} {{ db.databaseProductVersion }} - {{ db.userName }}</li>
@@ -13,6 +15,7 @@
         <li>storesLowerCaseIdentifiers: {{ db.storesLowerCaseIdentifiers }}</li>
         <li>storesUpperCaseIdentifiers: {{ db.storesUpperCaseIdentifiers }}</li>
       </ul>
+      <input type="checkbox" id="{{ db.id }}" on-click="display">
     </template>
   </template>
 </polymer-element>
